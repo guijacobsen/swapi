@@ -115,3 +115,20 @@ body #root {
     display: flex;
     align-items: center;
 }
+
+@media screen and (max-width:756px) {
+    .planets-list {
+        font-size: 16px;
+        width: 80%;
+    }
+    
+    .planets-list h1 {
+        font-size: 24px;
+    }
+    .planets-list .ul .li {
+        font-size: 13px;
+    }
+    .planets-list .ul .li .planet-name {
+        font-size: 21px;
+    }
+}
