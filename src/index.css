@@ -28,6 +28,26 @@ a {color: inherit;}
 .clear{clear: both;display: block;}
 
 body #root {
+    min-height: 100vh;
+}
+
+body #root.loading {
+    background: rgba(255,255,255,0.3);
+}
+body #root.loading::after {
+    content: 'Loading';
+    width: 90px;
+    height: 60px;
+    /* background: #f00; */
+    top: calc(50% - 60px);
+    left: calc(50% - 90px);
+    position: fixed;
+    z-index: 999999;
+    text-align: center;
+    color: rgba(255,255,0,1);
+}
+body #root.loading * {
+    opacity: 0.4;
 }
 
 
@@ -145,6 +165,10 @@ body #root {
         font-size: 12px;
     }
     .planets-list .ul .li .planet-name {
-        font-size: 16px;
+        font-size: 19px;
     }
 }
+
+/* body.modal::after {
+    content: '';
+} */

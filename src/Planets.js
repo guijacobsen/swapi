@@ -13,15 +13,27 @@ export default class Planets extends Component {
         currentPage: 1
     };
 
-    nextPage() {
+    nextPage(e) {
         console.log('-- nextPage --');
+        console.log('e.target');
+        console.log(e.target);
+
+        let el = e.target;
+        if( el.classList.contains('disabled') ) return;
+
+        el.classList.add('disabled');
+
+        document.querySelector('#root').classList.add('loading');
         
         console.log( this.state );
         try {
             axios.get(`${ this.state.planets.next }`)
             .then(r => {
                 console.log(r);
+
+                document.querySelector('#root').classList.remove('loading');
                 
+                el.classList.remove('disabled');
                 this.setState({
                     planets: r.data,
                     currentPage: this.state.currentPage + 1
@@ -31,16 +43,30 @@ export default class Planets extends Component {
 
         } catch(e) {
             console.log(e);
+
+            document.querySelector('#root').classList.remove('loading');
         }
     }
 
-    prevPage() {
+    prevPage(e) {
         console.log('-- prevPage --');
+        console.log(e.target);
+
+        let el = e.target;
+        if( el.classList.contains('disabled') ) return;
+
+        el.classList.add('disabled');
+
+        document.querySelector('#root').classList.add('loading');
 
         try {
             axios.get(`${ this.state.planets.previous }`)
             .then(r => {
                 console.log(r);
+
+                document.querySelector('#root').classList.remove('loading');
+
+                el.classList.remove('disabled');
                 
                 this.setState({
                     planets: r.data,
@@ -51,16 +77,21 @@ export default class Planets extends Component {
 
         } catch(e) {
             console.log(e);
+            document.querySelector('#root').classList.remove('loading');
         }
 
     }
 
     getPlanets() {
 
+        document.querySelector('#root').classList.add('loading');
+
         try {
             axios.get(`https://swapi.co/api/planets`)
             .then(r => {
                 console.log(r);
+
+                document.querySelector('#root').classList.remove('loading');
 
                 let planets = r.data;
                 let totalPages = parseInt(planets.count / planets.results.length);
@@ -81,6 +112,7 @@ export default class Planets extends Component {
     
         } catch(e) {
             console.log(e);
+            document.querySelector('#root').classList.remove('loading');
         }
 
     }
