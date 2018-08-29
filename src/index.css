@@ -132,3 +132,19 @@ body #root {
         font-size: 21px;
     }
 }
+
+@media screen and (max-width:514px) {
+    .planets-list {
+        width: 90%;
+    }
+    
+    .planets-list h1 {
+        font-size: 17px;
+    }
+    .planets-list .ul .li {
+        font-size: 12px;
+    }
+    .planets-list .ul .li .planet-name {
+        font-size: 16px;
+    }
+}
