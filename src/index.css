@@ -1,0 +1,117 @@
+* {margin: 0;padding: 0;box-sizing: border-box;
+    /* font-family: arial, serif; */
+    font-family: 'Cousine', monospace;
+}
+
+html {
+    min-height: 100%;
+}
+body {
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    
+    background: url('swbg.png') no-repeat top center;
+    /* background: url('swbg3.jpg') no-repeat top center; */
+    background-size: cover;
+    color: #75c7e0;
+}
+
+input[type=submit],button, a{
+    cursor: pointer;
+}
+
+a {color: inherit;}
+.left {float: left;}
+.right{float: right;}
+.clear{clear: both;display: block;}
+
+body #root {
+}
+
+
+.planets-list {
+    width: 90%;
+    max-width: 514px;
+    margin: auto;
+    font-size: 20px;
+    text-shadow: 0 0 0;
+    text-transform: uppercase;
+    padding: 50px 0 0;
+
+}
+
+.planets-list h1 {
+    /* text-align: center; */
+    color: #efc600;
+    margin-bottom: 30px;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+.planets-list .ul {
+    list-style: none;
+    box-shadow: 0 0 24px rgba(255,255,255,1.0);
+    margin: 16px 0;
+    border-radius: 4px;
+    padding: 16px 0;
+    background: rgba(0,0,0,0.2);
+}
+.planets-list .ul .li {
+    text-align: center;
+    font-size: 16px;
+    outline: none;
+}
+.planets-list .ul .li:last-child {}
+
+.planets-list .ul .li:hover {
+    color: #efc600;
+}
+
+.planets-list .ul .li .planet-name {
+    padding: 0.5em 0;
+    font-size: 25px;
+    outline: none;
+    cursor: crosshair;
+}
+.planets-list .ul .li .planet-name[aria-selected="true"],
+.planets-list .ul .li .planet-name[aria-selected="true"] + div  {
+    color: #efc600;
+}
+
+.accordion__body {padding: 10px;}
+
+.buttons {
+    padding: 36px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.buttons button {
+    background: transparent;
+    border: none;
+    border-radius: 0px;
+    box-shadow: 0 0 5px rgba(255,255,0,0.9);
+    width: 45%;
+    padding: 12px 0;
+    color: #eee;
+    transition: .5s;
+    outline: none;
+
+}
+.buttons button:hover {
+    box-shadow: 0 0 10px rgba(255,255,0,0.9);
+    border-radius: 5px;
+    text-shadow: 0 0 1px rgba(255,255,0,0.9);
+}
+.buttons button.alg-l {
+    margin: 0 0 0 auto;
+}
+.buttons button.ma {
+    margin: auto;
+}
+.full-height {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
