@@ -39,8 +39,8 @@ body #root.loading::after {
     width: 90px;
     height: 60px;
     /* background: #f00; */
-    top: calc(50% - 60px);
-    left: calc(50% - 90px);
+    top: calc(50% - 30px);
+    left: calc(50% - 45px);
     position: fixed;
     z-index: 999999;
     text-align: center;
